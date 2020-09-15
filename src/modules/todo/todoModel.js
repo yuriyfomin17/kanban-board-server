@@ -4,12 +4,11 @@ const todoSchema = mongoose.Schema(
   {
     _id: mongoose.Schema.Types.ObjectId,
     name: { type: String, required: true },
-    description: {
-      type: String,
-      required: false,
+    tasks: {
+      type: Array,
+      required: true,
       default: '',
     },
-    done: Boolean,
   },
   { timestamps: {} },
 );

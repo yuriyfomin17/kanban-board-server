@@ -1,8 +1,8 @@
-import Todo from '../todoModel';
+import todoModel from '../todoModel';
 
 const todoGetById = (req, res) => {
   const id = req.params.todoId;
-  Todo.findById(id)
+  todoModel.findById(id)
     .select('-__v')
     .exec()
     .then(doc => {

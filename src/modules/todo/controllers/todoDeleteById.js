@@ -1,8 +1,11 @@
-import Todo from '../todoModel';
+import todoModel from '../todoModel';
 
 const todoDeleteById = (req, res) => {
-  const id = req.params.todoId;
-  Todo.remove({ _id: id })
+  const column = req.body.column;
+  const id = req.body.id
+  console.log(id);
+  console.log(column);
+  todoModel.update({ name: column }, { $pull: {'tasks':{id:id} }})
     .exec()
     .then(doc => {
       if (doc.n) {

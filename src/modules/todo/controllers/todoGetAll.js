@@ -1,7 +1,7 @@
-import Todo from '../todoModel';
+import todoModel from '../todoModel';
 
 const todoGetAll = (req, res) => {
-  Todo.find()
+  todoModel.find()
     // .populate({ // Feature like JOIN in SQL
     // path: 'members',
     // match: { age: { $gte: 21 } },
@@ -17,6 +17,7 @@ const todoGetAll = (req, res) => {
     .catch(err => {
       res.status(500).json(err);
     });
+
 };
 
 export default todoGetAll;
