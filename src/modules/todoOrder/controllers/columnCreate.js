@@ -1,13 +1,12 @@
+import orderModel from '../orderModel';
 import mongoose from 'mongoose';
-import todoModel from '../todoModel';
-
 export default async function columnCreate(req, res) {
   const _id = new mongoose.Types.ObjectId();
 
-  const column = new todoModel({
+  const column = new orderModel({
     _id,
-    name: req.body.name,
-    tasks: req.body.tasks,
+    column: req.body.column,
+    order: [],
   });
 
   column
